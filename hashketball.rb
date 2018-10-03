@@ -138,9 +138,9 @@ end
 def most_points_scored
 points_array = []
 #home
-game_hash[:home][:players].each{|playername, playerstats| shoe_sizes << playerstats[:points]}
+game_hash[:home][:players].each{|playername, playerstats| points_array << playerstats[:points]}
 #away
-game_hash[:away][:players].each{|playername, playerstats| shoe_sizes << playerstats[:points]}
+game_hash[:away][:players].each{|playername, playerstats| points_array << playerstats[:points]}
 #home check
 game_hash[:home][:players].each do |playername, playerstats|
 if playerstats[:points] == points_array.sort![-1]
