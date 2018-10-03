@@ -121,7 +121,7 @@ game_hash[:away][:players].each{|playername, playerstats| shoe_sizes << playerst
 #home check
 game_hash[:home][:players].each do |playername, playerstats|
 if playerstats[:shoe] == shoe_sizes.sort![-1]
-return playername
+return playerstats[:rebounds]
 end
 end 
 #awaycheck
