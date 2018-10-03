@@ -169,3 +169,28 @@ winning_team
 
 #3. Which player has the longest name? 
 def player_with_longest_name 
+name_lengths = []
+#home
+game_hash[:home][:players].each{|playername, playerstats| name_lengths << playername.length}
+#away
+game_hash[:away][:players].each{|playername, playerstats| name_lengths << playername.length}
+#home check
+game_hash[:home][:players].each do |playername, playerstats|
+if playername.length == name_lengths.sort![-1]
+return playername
+end
+end 
+#awaycheck
+game_hash[:away][:players].each do |playername, playerstats|
+if playername.length == name_lengths.sort![-1]
+return playername
+end
+end 
+end
+
+player_with_longest_name
+
+######################################################################################################################################################################S U P E R    B O N U S ############################
+
+def long_name_steals_a_ton?
+  
