@@ -99,5 +99,23 @@ game_hash[:away][:players].each do |player, playerstats|
   end 
 end 
 end 
-
-def big_shoe_rebounds
+######################################################################
+def big_shoe_rebounds 
+shoe_sizes = []
+#home
+game_hash[:home][:players].each{|playername, playerstats| shoe_sizes << playerstats[:shoe]}
+#away
+game_hash[:away][:players].each{|playername, playerstats| shoe_sizes << playerstats[:shoe]}
+#home check
+game_hash[:home][:players].each do |playername, playerstats|
+if playerstats[:shoe] == shoe_sizes.sort![-1]
+return playername
+end
+end 
+#awaycheck
+game_hash[:away][:players].each do |playername, playerstats|
+if playerstats[:shoe] == shoe_sizes.sort![-1]
+return playername
+end
+end 
+end
