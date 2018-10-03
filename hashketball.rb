@@ -159,4 +159,13 @@ most_points_scored
 
 #2. Which team has the most points? 
 def winning_team
-  
+if game_hash[:home][:players].include?(most_points_scored)
+return game_hash[:home][:team_name]
+else return game_hash[:away][:team_name]
+end
+end 
+
+winning_team
+
+#3. Which player has the longest name? 
+def player_with_longest_name 
