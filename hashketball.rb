@@ -27,7 +27,7 @@ def game_hash
   }
 end
 
-
+######################################################################
 
 def num_points_scored (playername) 
 
@@ -43,6 +43,8 @@ game_hash[:away][:players].each do |player, playerstats|
 end 
 end 
 
+######################################################################
+
 def shoe_size (playername)
 game_hash[:home][:players].each do |player, playerstats|
   if player == playername 
@@ -56,6 +58,8 @@ game_hash[:away][:players].each do |player, playerstats|
 end 
 end 
 
+######################################################################
+
 def team_colors(teamname)
   if game_hash.dig(:home, :team_name) == teamname
    return game_hash.dig(:home, :colors)
@@ -67,9 +71,13 @@ end
 end
 end
 
+######################################################################
+
 def team_names
  [game_hash[:home][:team_name],game_hash[:away][:team_name]]
 end
+
+######################################################################
   
 def player_numbers(teamname)
   if game_hash[:home][:team_name]== teamname
@@ -86,6 +94,8 @@ awaynumbers = []
       return awaynumbers
       end  
       end 
+  
+######################################################################
       
 def player_stats(playername)
  game_hash[:home][:players].each do |player, playerstats|
@@ -99,7 +109,9 @@ game_hash[:away][:players].each do |player, playerstats|
   end 
 end 
 end 
+
 ######################################################################
+
 def big_shoe_rebounds 
 shoe_sizes = []
 #home
