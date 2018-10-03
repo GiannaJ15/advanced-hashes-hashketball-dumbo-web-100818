@@ -156,3 +156,7 @@ end
 end
 
 most_points_scored
+
+#2. Which team has the most points? 
+def winning_team
+  
