@@ -131,3 +131,26 @@ return playerstats[:rebounds]
 end
 end 
 end
+
+############################################################################################################################################################################### B O N U S ###############################
+
+#1: Which player has the most points ?
+def most_points_scored
+points_array = []
+#home
+game_hash[:home][:players].each{|playername, playerstats| shoe_sizes << playerstats[:points]}
+#away
+game_hash[:away][:players].each{|playername, playerstats| shoe_sizes << playerstats[:points]}
+#home check
+game_hash[:home][:players].each do |playername, playerstats|
+if playerstats[:points] == points_array.sort![-1]
+return playername
+end
+end 
+#awaycheck
+game_hash[:away][:players].each do |playername, playerstats|
+if playerstats[:points] == points_array.sort![-1]
+return playername
+end
+end 
+end
