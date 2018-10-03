@@ -193,4 +193,21 @@ player_with_longest_name
 ######################################################################################################################################################################S U P E R    B O N U S ############################
 
 def long_name_steals_a_ton?
-  
+  steals_array = []
+#home
+game_hash[:home][:players].each{|playername, playerstats| steals_array << playerstats[:steals]}
+#away
+game_hash[:away][:players].each{|playername, playerstats| steals_array << playerstats[:steals]}
+#home check
+game_hash[:home][:players].each do |playername, playerstats|
+if playerstats[:steals] == steals_array.sort![-1]
+return playername == player_with_longest_name
+end
+end 
+#awaycheck
+game_hash[:away][:players].each do |playername, playerstats|
+if playerstats[:steals] == steals_array.sort![-1]
+return playername == player_with_longest_name
+end
+end
+end
